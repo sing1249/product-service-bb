@@ -2,92 +2,64 @@
 GET /health
 Host: localhost:3002
 
-### Get products
+### Get all products
 GET /
 Host: localhost:3002
 
-### Add product
+### Add a new Best Buy product
 POST /
 Host: localhost:3002
 Content-Type: application/json
 
 {
-    "id": 0,
-    "name": "Where My Dogs At Collar Tag",
-    "price": 5.99,
-    "description": "Ensure your furry friend always finds their way home with this Where My Dogs At Collar Tag. This tag is made of durable metal and features a fun design that will make your dog the talk of the town. It also includes a metal ring that makes it easy to attach to your dog's collar.",
-    "image": "/placeholder.png"
+    "id": 11,
+    "name": "Wireless Noise-Cancelling Headphones",
+    "price": 299.99,
+    "description": "Experience superior sound quality with these wireless noise-cancelling headphones. Perfect for immersive music, calls, and gaming.",
+    "image": "/headphones.jpg"
 }
 
-### Update product with too short of a description
+### Update an existing Best Buy product
 PUT /
 Host: localhost:3002
 Content-Type: application/json
 
 {
     "id": 11,
-    "name": "Where My Dogs At Digital Collar Tag",
-    "price": 105.99,
-    "description": "Tag your dog",
-    "image": "/placeholder.png"
+    "name": "Wireless Noise-Cancelling Headphones Pro",
+    "price": 349.99,
+    "description": "Upgraded version with enhanced noise-cancelling technology and 40-hour battery life.",
+    "image": "/headphones_pro.jpg"
 }
 
-### Update product with invalid price
-PUT /
-Host: localhost:3002
-Content-Type: application/json
-
-{
-    "id": 11,
-    "name": "Where My Dogs At Digital Collar Tag",
-    "price": 105.99,
-    "description": "Ensure your furry friend always finds their way home with this Where My Dogs At Digital Collar Tag. This digital tag uses low energy bluetooth to connect to your phone and features a fun design that will make your dog the talk of the town. It also includes a metal ring that makes it easy to attach to your dog's collar.",
-    "image": "/placeholder.png"
-}
-
-### Update product
-PUT /
-Host: localhost:3002
-Content-Type: application/json
-
-{
-    "id": 11,
-    "name": "Where My Dogs At Digital Collar Tag",
-    "price": 5.99,
-    "description": "Ensure your furry friend always finds their way home with this Where My Dogs At Digital Collar Tag. This digital tag uses low energy bluetooth to connect to your phone and features a fun design that will make your dog the talk of the town. It also includes a metal ring that makes it easy to attach to your dog's collar.",
-    "image": "/placeholder.png"
-}
-
-### Get product by id
+### Get product by ID
 GET /11
 Host: localhost:3002
 
-### Delete product by id
-DELETE /11 
+### Delete product by ID
+DELETE /11
 Host: localhost:3002
 
-### Get ai service health
+### AI service health check
 GET /ai/health
 Host: localhost:3002
 
-### Get product description from ai service
+### Generate product description using AI service
 POST /ai/generate/description
 Host: localhost:3002
 Content-Type: application/json
 
 {
-    "name": "Seafarer's Tug Rope",
-    "tags": ["toy","dog"]
+    "name": "4K Smart TV",
+    "tags": ["electronics", "tv", "4K"]
 }
 
-
-### Get product image from ai service
+### Generate product image using AI service
 POST /ai/generate/image
 Host: localhost:3002
 Content-Type: application/json
 
 {
-    "name": "Seafarer's Tug Rope",
-    "description": "Engage your pup in a game of tug-of-war with the Seafarer's Tug Rope. Made from durable materials, this toy is perfect for interactive playtime and bonding with your furry friend."
+    "name": "4K Smart TV",
+    "description": "A stunning 55-inch 4K Smart TV with ultra-HD resolution, HDR support, and built-in streaming apps."
 }
-
